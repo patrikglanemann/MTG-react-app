@@ -13,10 +13,12 @@ export default function App() {
   return (
     <Router>
       <div className="App">
-        <header>
+        <header className="Header">
           <h1>MTG Card Search</h1>
-          <nav>
-            <NavLink to="/">Home</NavLink>
+          <nav className="Header__navbar">
+            <NavLink exact to="/">
+              Home
+            </NavLink>
             <NavLink to="/cards">Cards</NavLink>
           </nav>
         </header>

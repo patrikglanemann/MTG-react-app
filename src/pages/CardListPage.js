@@ -21,6 +21,7 @@ export default function CardListPage() {
   }, [page]);
 
   function renderCards() {
+    document.title = "MTG-Card-Search Card-List";
     const cardList = cards.map((card) => {
       return (
         <li key={card.id}>

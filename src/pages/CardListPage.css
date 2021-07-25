@@ -14,3 +14,7 @@
   padding: 3px;
   margin-bottom: 20px;
 }
+
+.LoadBtn:hover {
+  cursor: pointer;
+}

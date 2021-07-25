@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
+import "./DetailCardPage.css";
 
 export default function DetailcardPage() {
   let history = useHistory();
@@ -40,11 +41,17 @@ export default function DetailcardPage() {
     }
 
     return (
-      <div>
+      <div className="Content__wrapper">
         <p>{card[0]?.name}</p>
         <img src={card[0]?.imageUrl} alt={card[0]?.name} />
-        <button onClick={handleBackCLick}>Back</button>
-        <button onClick={handleNextCard}>Next</button>
+        <div className="Content__wrapper__btnWrapper">
+          <button className="Content__wrapper__btn" onClick={handleBackCLick}>
+            Back
+          </button>
+          <button className="Content__wrapper__btn" onClick={handleNextCard}>
+            Next
+          </button>
+        </div>
       </div>
     );
   }

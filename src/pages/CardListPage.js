@@ -4,7 +4,7 @@ import "./CardListPage.css";
 
 export default function CardListPage() {
   const [cards, setCards] = useState([]);
-  const [page, setPage] = useState(582);
+  const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -37,6 +37,15 @@ export default function CardListPage() {
         </>
       );
     } else {
+      const cardIdArray = cards.map((card) => {
+        return card.id;
+      });
+      try {
+        localStorage.setItem("cardIds", JSON.stringify(cardIdArray));
+      } catch (error) {
+        console.log(error);
+        alert("There was an error while saving cardIds");
+      }
       return cardList;
     }
   }

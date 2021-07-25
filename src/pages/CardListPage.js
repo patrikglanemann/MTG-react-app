@@ -5,29 +5,38 @@ import "./CardListPage.css";
 export default function CardListPage() {
   const [cards, setCards] = useState([]);
   const [page, setPage] = useState(582);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const url = `https://api.magicthegathering.io/v1/cards?page=${page}`;
+    setIsLoading(true);
     fetch(url)
       .then((resp) => resp.json())
       .then((data) => {
-        setCards(data.cards);
+        setCards((prevCards) => {
+          return [...prevCards, ...data.cards];
+        });
+        setIsLoading(false);
       });
   }, [page]);
 
   function renderCards() {
-    if (cards.length === 0) {
-      return <li>Reached end of list.</li>;
-    } else {
-      const cardList = cards.map((card) => {
-        return (
-          <li key={card.id}>
-            <Link to={`/cards/${card.id}`}>{card.name}</Link>
-          </li>
-        );
-      });
+    const cardList = cards.map((card) => {
+      return (
+        <li key={card.id}>
+          <Link to={`/cards/${card.id}`}>{card.name}</Link>
+        </li>
+      );
+    });
 
-      console.log(cards);
+    if (isLoading || cards === null || cards === undefined) {
+      return (
+        <>
+          {cardList}
+          <li>Loading...</li>
+        </>
+      );
+    } else {
       return cardList;
     }
   }

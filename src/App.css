@@ -6,7 +6,7 @@
 }
 
 .Header {
-  background-color: rgb(57, 17, 18);
+  background-color: rgb(33, 33, 33);
   color: #e0dfdc;
 }
 
@@ -27,11 +27,12 @@
   border: 1px solid #e0dfdc;
 }
 
-.Header__navbar > a:visited {
-  color: #e0dfdc;
-  text-decoration: none;
-}
-
 .Header__navbar > a.active {
   background-color: rgb(41, 36, 87);
+}
+
+.Content {
+  background-color: rgb(66, 67, 66);
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }

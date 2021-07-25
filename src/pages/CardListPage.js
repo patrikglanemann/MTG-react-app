@@ -24,7 +24,7 @@ export default function CardListPage() {
     document.title = "MTG-Card-Search Card-List";
     const cardList = cards.map((card) => {
       return (
-        <li key={card.id}>
+        <li key={card.id} className="cardList__item">
           <Link to={`/cards/${card.id}`}>{card.name}</Link>
         </li>
       );
@@ -59,7 +59,9 @@ export default function CardListPage() {
     <div>
       <h2>Card List:</h2>
       <ul className="CardList">{renderCards()}</ul>
-      <button onClick={handleLoadMore}>Load More</button>
+      <button className="LoadBtn" onClick={handleLoadMore}>
+        Load More
+      </button>
     </div>
   );
 }

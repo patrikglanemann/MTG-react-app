@@ -22,7 +22,7 @@ export default function App() {
             <NavLink to="/cards">Cards</NavLink>
           </nav>
         </header>
-        <main>
+        <main className="Content">
           <Switch>
             <Route path="/cards/:id">
               <DetailCardPage />

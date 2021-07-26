@@ -8,7 +8,15 @@ export default function CardListPage() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const url = `https://api.magicthegathering.io/v1/cards?page=${page}`;
+    let url = JSON.parse(localStorage.getItem("filterUrl"));
+    localStorage.setItem(
+      "filterUrl",
+      JSON.stringify(`https://api.magicthegathering.io/v1/cards?page=${page}`)
+    );
+    if (url === null) {
+      url = `https://api.magicthegathering.io/v1/cards?page=${page}`;
+    }
+    //const url = `https://api.magicthegathering.io/v1/cards?page=${page}`;
     setIsLoading(true);
     fetch(url)
       .then((resp) => resp.json())

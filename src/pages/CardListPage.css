@@ -1,4 +1,20 @@
 .CardList {
-  overflow-y: scroll;
-  scroll-behavior: smooth;
+  list-style-type: none;
+}
+.cardList__item > a {
+  text-decoration: none;
+  color: #e0dfdc;
+}
+.cardList__item {
+  margin: 5px 0;
+}
+
+.LoadBtn {
+  border: 1px solid #e0dfdc;
+  padding: 3px;
+  margin-bottom: 20px;
+}
+
+.LoadBtn:hover {
+  cursor: pointer;
 }

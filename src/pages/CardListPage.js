@@ -9,6 +9,7 @@ export default function CardListPage() {
 
   useEffect(() => {
     let url = JSON.parse(localStorage.getItem("filterUrl"));
+    //Set back Url to default to reset filterUrl
     localStorage.setItem(
       "filterUrl",
       JSON.stringify(`https://api.magicthegathering.io/v1/cards?page=${page}`)

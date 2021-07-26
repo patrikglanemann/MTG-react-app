@@ -1,4 +1,4 @@
-import { Redirect, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import mtg_logo from "../images/mtg_logo.png";
 import "./Home.css";
